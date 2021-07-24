@@ -13,7 +13,7 @@ function index() {
     ) {
       router.push('/writer/auth/login');
     }
-  }, []);
+  }, [router]);
   return (
     <AuthLayout title="Home">
       <NavbarWriter />
