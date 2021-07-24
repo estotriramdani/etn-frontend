@@ -1,5 +1,7 @@
 import { useRouter } from 'next/dist/client/router';
 import React, { useState } from 'react';
+import Spinner from '../../atoms/spinner';
+import Link from 'next/link';
 
 const NavbarWriter = () => {
   const [isLogout, setIsLogout] = useState(false);
@@ -32,9 +34,9 @@ const NavbarWriter = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Home <span className="sr-only">(current)</span>
-              </a>
+              <Link href="/">
+                <a className="nav-link">Home</a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">
@@ -43,16 +45,7 @@ const NavbarWriter = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#" onClick={handleLogout}>
-                {isLogout ? (
-                  <div
-                    className="spinner-border spinner-border-sm mr-3"
-                    role="status"
-                  >
-                    <span className="sr-only">Loading...</span>
-                  </div>
-                ) : (
-                  ''
-                )}
+                {isLogout ? <Spinner /> : ''}
                 Logout
               </a>
             </li>

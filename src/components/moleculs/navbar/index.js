@@ -35,6 +35,11 @@ const Navbar = () => {
             <i className="bi bi-bookmark-fill"></i> &nbsp;Saved
           </a>
         </Link>
+        <Link href="/writer/home">
+          <a className="nav-item">
+            <i className="bi bi-pencil"></i> &nbsp;WriterCorner
+          </a>
+        </Link>
       </div>
       <button className="hamburger" onClick={() => showNavMenu()}>
         <i className="bi bi-list"></i>
