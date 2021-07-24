@@ -1,0 +1,27 @@
+@import '../variables';
+
+.footer {
+  background-color: $dark;
+  width: 100vw;
+  padding: 20px 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $white;
+  .developer {
+    flex: 1;
+    p {
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+  }
+  .social-media {
+    display: flex;
+    font-size: 1.5em;
+    flex: 1;
+    a {
+      display: block;
+      margin-right: 15px;
+    }
+  }
+}

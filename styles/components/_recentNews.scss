@@ -1,0 +1,40 @@
+@import '../variables';
+
+.recent-news-wrapper {
+  .recent-news-card {
+    margin-bottom: 15px;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.04);
+      background-color: $white;
+    }
+    .img-thumb {
+      max-width: 75px;
+      max-height: 75px;
+      object-fit: cover;
+      img {
+        position: relative;
+        display: block;
+        z-index: 0 !important;
+      }
+    }
+    .card-news-title {
+      padding: 10px;
+      .title {
+        color: $dark;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .category {
+        font-size: 12px;
+        color: $gray;
+      }
+    }
+  }
+}

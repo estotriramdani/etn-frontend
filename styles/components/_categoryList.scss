@@ -1,0 +1,21 @@
+@import '../variables';
+.category-list {
+  color: $dark;
+  h2 {
+    font-size: 1.3em;
+  }
+  .category-item-wrapper {
+    padding: 20px;
+    background-color: $white;
+    border-radius: 15px;
+    .category-item {
+      display: block;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+      color: $gray;
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+}

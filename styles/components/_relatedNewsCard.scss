@@ -1,0 +1,28 @@
+@import '../variables';
+
+.related-news-card {
+  color: $dark;
+  .related-thumb {
+    max-height: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+  .related-detail {
+    padding: 20px;
+    .related-title {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .related-desc {
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+    .read-more {
+      text-decoration: underline;
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+}

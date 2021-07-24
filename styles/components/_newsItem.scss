@@ -1,0 +1,13 @@
+@import '../variables';
+
+.news-item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+}
+
+@media (max-width: 768px) {
+  .news-item-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+}

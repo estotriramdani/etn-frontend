@@ -1,0 +1,36 @@
+@import 'homeLayout';
+@import 'components/navbar';
+@import 'components/footer';
+@import 'components/categoryList';
+@import 'components/recentNews';
+@import 'components/headline';
+@import 'components/relatedNewsCard';
+@import 'components/detailNews';
+@import 'components/newsItem';
+
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.heading-2 {
+  font-size: 1.5em;
+  color: $dark;
+}
+
+body {
+  background-color: $light;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
