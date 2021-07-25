@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useRouter } from 'next/dist/client/router';
@@ -108,7 +109,7 @@ function index({ dataPost }) {
                     <h3>Ubah</h3>
                   </div>
                   <div className="col-md">
-                    <Link href="home/my-posts">
+                    <Link href="/writer/home/my-posts">
                       <a className="btn btn-primary float-right">
                         Lihat Semua Postingan Saya
                       </a>
@@ -184,6 +185,10 @@ function index({ dataPost }) {
                 </div>
                 <div className="form-group">
                   <label htmlFor="gambar">Link Gambar</label>
+                  <small className="mb-3 d-block">
+                    Gambar dari: 'placeimg.com', 'dummyimage.com',
+                    'images.unsplash.com', 'esto.my.id',
+                  </small>
                   <input
                     type="text"
                     className="form-control mb-3"

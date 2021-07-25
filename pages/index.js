@@ -5,6 +5,15 @@ import { Headline } from '../src/components/moleculs';
 export default function Home({ posts }) {
   const randomNumber = Math.floor(Math.random() * posts.data.length - 1) + 1;
   const post = posts.data[randomNumber];
+  const handleSavePost = () => {
+    if (window.localStorage.getItem('EtnSavedPost') === null) {
+      window.localStorage.setItem('EtnSavedPost', '[]');
+    }
+    let savedPost = JSON.parse(window.localStorage.getItem('EtnSavedPost'));
+    savedPost.push(post);
+    window.localStorage.setItem('EtnSavedPost', JSON.stringify(savedPost));
+    alert('Post berhasil disimpan!');
+  };
   return (
     <>
       <HomeLayout title="ETN News">
@@ -19,6 +28,7 @@ export default function Home({ posts }) {
           category={post.category}
           slug={post.slug}
           key={post._uid}
+          handleSavedPost={handleSavePost}
         />
       </HomeLayout>
     </>

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { IMGPlaceholder, IMGPolitics } from '../../../assets';
 import Gap from '../../atoms/gap';
 
-const Headline = ({ title, slug, category, body, image }) => {
+const Headline = ({ title, slug, category, body, image, handleSavedPost }) => {
   return (
     <div className="headline">
       <div className="headline-image">
@@ -31,7 +31,7 @@ const Headline = ({ title, slug, category, body, image }) => {
             <Gap height={10} />
             <p className="headline-news-title">{title}</p>
           </div>
-          <button>
+          <button onClick={handleSavedPost}>
             <i className="bi bi-bookmark"></i>
           </button>
         </div>

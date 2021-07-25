@@ -169,7 +169,7 @@ export default function register() {
                 <a className="d-block">Sudah punya akun? Login di sini</a>
               </Link>
               <Link href="/">
-                <a className="d-block mt-3">Kembali ke beranda</a>
+                <a className="d-block mt-3">Kembali ke Halaman Utama</a>
               </Link>
             </div>
           </div>
