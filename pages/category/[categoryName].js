@@ -1,6 +1,4 @@
-import axios from 'axios';
 import { useRouter } from 'next/dist/client/router';
-import React, { useEffect, useState } from 'react';
 import Gap from '../../src/components/atoms/gap';
 import HomeLayout from '../../src/components/layouts/HomeLayout';
 import { RelatedNewsCard } from '../../src/components/moleculs';
@@ -45,7 +43,7 @@ export async function getStaticPaths() {
       { params: { categoryName: 'sport' } },
       { params: { categoryName: 'business' } },
     ],
-    fallback: true,
+    fallback: false,
   };
 }
 
