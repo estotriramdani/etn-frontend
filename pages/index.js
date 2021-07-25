@@ -38,7 +38,7 @@ export default function Home({ posts }) {
 export async function getStaticProps(context) {
   const randomNumber = Math.ceil(Math.random(0) * 10);
   const res = await fetch(
-    'http://localhost:4000/v1/blog/posts?perPage=1000&currentPage=1'
+    'https://etn-news-api.vercel.app/v1/blog/posts?perPage=1000&currentPage=1'
   );
   const posts = await res.json();
   return { props: { posts } };

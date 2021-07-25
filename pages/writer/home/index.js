@@ -51,6 +51,7 @@ function index() {
   };
 
   const handleSubmit = () => {
+    setIsSubmitted(true);
     if (
       title.length <= 0 &&
       category.length <= 0 &&
@@ -77,7 +78,7 @@ function index() {
       redirect: 'follow',
     };
 
-    fetch('http://localhost:4000/v1/blog/post', requestOptions)
+    fetch('https://etn-news-api.vercel.app/v1/blog/post', requestOptions)
       .then((response) => response.json())
       .then((result) => {
         if (result.message === 'Create blog post success') {

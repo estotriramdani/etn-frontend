@@ -52,6 +52,7 @@ function index({ dataPost }) {
   };
 
   const handleSubmit = () => {
+    setIsSubmitted(true);
     if (
       title.length <= 0 &&
       category.length <= 0 &&
@@ -78,7 +79,10 @@ function index({ dataPost }) {
       redirect: 'follow',
     };
 
-    fetch(`http://localhost:4000/v1/blog/post/${slug}`, requestOptions)
+    fetch(
+      `https://etn-news-api.vercel.app/v1/blog/post/${slug}`,
+      requestOptions
+    )
       .then((response) => response.json())
       .then((result) => {
         if (result.message.substr(0, 20) === 'Blog post dengan slug') {
@@ -223,7 +227,7 @@ function index({ dataPost }) {
                   ></textarea>
                 </div>
                 <button className="btn btn-primary" onClick={handleSubmit}>
-                  {isSubmitted ? <Spinner /> : ''}Tambah
+                  {isSubmitted ? <Spinner /> : ''}Ubah
                 </button>
               </div>
             </div>
@@ -240,7 +244,7 @@ export default index;
 
 export async function getStaticPaths() {
   const res = await fetch(
-    'http://localhost:4000/v1/blog/posts?perPage=1000&currentPage=1'
+    'https://etn-news-api.vercel.app/v1/blog/posts?perPage=1000&currentPage=1'
   );
   const dataPosts = await res.json();
 
@@ -256,7 +260,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const slug = context.params.slug;
 
-  const res = await fetch(`http://localhost:4000/v1/blog/post/${slug}`);
+  const res = await fetch(
+    `https://etn-news-api.vercel.app/v1/blog/post/${slug}`
+  );
   const dataPost = await res.json();
 
   // Pass post data to the page via props

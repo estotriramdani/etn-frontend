@@ -30,7 +30,7 @@ function MyPost() {
           redirect: 'follow',
         };
         fetch(
-          `http://localhost:4000/v1/blog/post/mine/${window.localStorage.getItem(
+          `https://etn-news-api.vercel.app/v1/blog/post/mine/${window.localStorage.getItem(
             'currentUser'
           )}`,
           requestOptions
@@ -56,7 +56,10 @@ function MyPost() {
         redirect: 'follow',
       };
 
-      fetch(`http://localhost:4000/v1/blog/post/${e.target.id}`, requestOptions)
+      fetch(
+        `https://etn-news-api.vercel.app/v1/blog/post/${e.target.id}`,
+        requestOptions
+      )
         .then((response) => response.json())
         .then((result) => {
           alert('Post berhasil dihapus!');

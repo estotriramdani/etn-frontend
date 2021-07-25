@@ -6,7 +6,9 @@ const RecentNews = () => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const getPosts = () => {
-    fetch('http://localhost:4000/v1/blog/posts?perPage=3&currentPage=1')
+    fetch(
+      'https://etn-news-api.vercel.app/v1/blog/posts?perPage=3&currentPage=1'
+    )
       .then((res) => res.json())
       .then((res) => {
         setPosts(res.data);

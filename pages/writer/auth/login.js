@@ -47,7 +47,7 @@ export default function login() {
 
     const config = {
       method: 'post',
-      url: 'http://localhost:4000/v1/auth/login',
+      url: 'https://etn-news-api.vercel.app/v1/auth/login',
       headers: {
         'Content-Type': 'application/json',
       },

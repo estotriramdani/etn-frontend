@@ -45,7 +45,7 @@ export default function News({ dataPost }) {
 
 export async function getStaticPaths() {
   const res = await fetch(
-    'http://localhost:4000/v1/blog/posts?perPage=1000&currentPage=1'
+    'https://etn-news-api.vercel.app/v1/blog/posts?perPage=1000&currentPage=1'
   );
   const dataPosts = await res.json();
 
@@ -62,7 +62,9 @@ export async function getStaticProps(context) {
   const news = context.params.news;
   const category = context.params.category;
 
-  const res = await fetch(`http://localhost:4000/v1/blog/post/${news}`);
+  const res = await fetch(
+    `https://etn-news-api.vercel.app/v1/blog/post/${news}`
+  );
   const dataPost = await res.json();
 
   // Pass post data to the page via props

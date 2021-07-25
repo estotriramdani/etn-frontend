@@ -52,7 +52,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const categoryName = context.params.categoryName;
   const res = await fetch(
-    `http://localhost:4000/v1/blog/category/${categoryName}`
+    `https://etn-news-api.vercel.app/v1/blog/category/${categoryName}`
   );
   const postsFromApi = await res.json();
 

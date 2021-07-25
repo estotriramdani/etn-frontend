@@ -57,7 +57,7 @@ export default function register() {
 
       const config = {
         method: 'post',
-        url: 'http://localhost:4000/v1/auth/register',
+        url: 'https://etn-news-api.vercel.app/v1/auth/register',
         headers: {
           'Content-Type': 'application/json',
         },
