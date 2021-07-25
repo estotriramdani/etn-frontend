@@ -9,7 +9,7 @@ const Card = ({ title, slug, image, onClickDelete }) => {
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">
-          <Link href={`/writer/home/my-post/${slug}`}>
+          <Link href={`/writer/home/my-posts/${slug}`}>
             <a className="btn btn-info mr-3">Detail</a>
           </Link>
           <a className="btn btn-danger" id={slug} onClick={onClickDelete}>

@@ -9,7 +9,6 @@ const RecentNews = () => {
     fetch('http://localhost:4000/v1/blog/posts?perPage=3&currentPage=1')
       .then((res) => res.json())
       .then((res) => {
-        console.log(res.data);
         setPosts(res.data);
       })
       .catch((error) => console.log(error));

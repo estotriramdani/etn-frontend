@@ -12,6 +12,7 @@ const DetailNews = ({
   category,
   created_at,
   author,
+  savePost,
 }) => {
   return (
     <div>
@@ -40,7 +41,7 @@ const DetailNews = ({
               <Gap height={10} />
               <p className="detail-news-title">{title}</p>
             </div>
-            <button>
+            <button onClick={savePost}>
               <i className="bi bi-bookmark"></i>
             </button>
           </div>

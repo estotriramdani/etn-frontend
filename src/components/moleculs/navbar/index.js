@@ -30,11 +30,6 @@ const Navbar = () => {
         >
           <i className="bi bi-book-fill"></i> &nbsp;Category
         </a>
-        <Link href="/home">
-          <a className="nav-item" onClick={showNavMenu}>
-            <i className="bi bi-bookmark-fill"></i> &nbsp;Saved
-          </a>
-        </Link>
         <Link href="/writer/home">
           <a className="nav-item">
             <i className="bi bi-pencil"></i> &nbsp;WriterCorner

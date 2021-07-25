@@ -5,6 +5,17 @@ import { DetailNews } from '../../../src/components/moleculs';
 
 export default function News({ dataPost }) {
   const newDataPost = dataPost.data;
+
+  const handleSavePost = () => {
+    if (window.localStorage.getItem('EtnSavedPost') === null) {
+      window.localStorage.setItem('EtnSavedPost', '[]');
+    }
+    let savedPost = JSON.parse(window.localStorage.getItem('EtnSavedPost'));
+    savedPost.push(newDataPost);
+    window.localStorage.setItem('EtnSavedPost', JSON.stringify(savedPost));
+    alert('Post berhasil disimpan!');
+  };
+
   return (
     <>
       <HomeLayout title="Detail News">
@@ -25,6 +36,7 @@ export default function News({ dataPost }) {
             newDataPost.createdAt
           ).getHours()}:${new Date(newDataPost.createdAt).getMinutes()}`}
           key={newDataPost.slug}
+          savePost={handleSavePost}
         />
       </HomeLayout>
     </>
