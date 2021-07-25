@@ -47,7 +47,9 @@ const DetailNews = ({
           </div>
           <Gap height={10} />
           <p>
-            {author} - Posted at {created_at}
+            Author:{' '}
+            <span style={{ textTransform: 'capitalize' }}>{author}</span> -
+            Posted at {created_at}
           </p>
         </div>
       </div>

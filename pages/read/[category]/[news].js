@@ -18,7 +18,7 @@ export default function News({ dataPost }) {
 
   return (
     <>
-      <HomeLayout title="Detail News">
+      <HomeLayout title={newDataPost.title}>
         <h2 className="heading-2" style={{ textTransform: 'capitalize' }}>
           {newDataPost.category}
         </h2>
