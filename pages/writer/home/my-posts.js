@@ -80,6 +80,18 @@ function MyPost() {
             ) : (
               ''
             )}
+            {myPosts.length <= 0 ? (
+              <div className="container">
+                <p>Tidak ada data</p>
+                <Link href="/writer/home">
+                  <a>
+                    <u>Kembali</u>
+                  </a>
+                </Link>
+              </div>
+            ) : (
+              ''
+            )}
             {myPosts.map((post) => {
               return (
                 <div className="col-md-4 mb-3" key={post.slug}>
