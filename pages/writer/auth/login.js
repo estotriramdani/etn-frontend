@@ -13,6 +13,7 @@ export default function login() {
   const [isUsernameWrong, setisUsernameWrong] = useState(false);
   const [isLoginSuccess, setIsLoginSuccess] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isClicked, setIsClicked] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function login() {
   };
 
   const handleSubmit = () => {
+    setIsClicked(true);
     const data = JSON.stringify({
       username,
       password,
@@ -55,25 +57,36 @@ export default function login() {
     axios(config)
       .then((response) => {
         if (response.data.message === 'Username tidak terdaftar') {
-          setIsLoginSuccess(false);
-          setIsPasswordWrong(false);
-          setisUsernameWrong(true);
+          setTimeout(() => {
+            setIsLoginSuccess(false);
+            setIsPasswordWrong(false);
+            setisUsernameWrong(true);
+          }, 1500);
         }
         if (response.data.message === 'Password salah') {
-          setIsLoginSuccess(false);
-          setIsPasswordWrong(true);
-          setisUsernameWrong(false);
+          setTimeout(() => {
+            setIsLoginSuccess(false);
+            setIsPasswordWrong(true);
+            setisUsernameWrong(false);
+          }, 1500);
         }
         if (response.data.message === 'Login sukses') {
-          setIsLoginSuccess(true);
-          setIsPasswordWrong(false);
-          setisUsernameWrong(false);
-          window.localStorage.setItem('currentUser', username);
           setTimeout(() => {
-            router.push('/writer/home');
-          }, 1000);
+            setIsLoginSuccess(true);
+            setIsPasswordWrong(false);
+            setisUsernameWrong(false);
+            window.localStorage.setItem('currentUser', username);
+            setTimeout(() => {
+              router.push('/writer/home');
+            }, 1000);
+          }, 1500);
         }
         console.log(response.data);
+      })
+      .then((res) => {
+        setTimeout(() => {
+          setIsClicked(false);
+        }, 1500);
       })
       .catch(function (error) {
         console.log(error);
@@ -131,7 +144,7 @@ export default function login() {
                 className="btn btn-primary d-block w-100"
                 onClick={handleSubmit}
               >
-                Login
+                {isClicked ? <Spinner /> : ''} Login
               </button>
               <br />
               <Link href="/writer/auth/register">

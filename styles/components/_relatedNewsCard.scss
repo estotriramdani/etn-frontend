@@ -3,9 +3,13 @@
 .related-news-card {
   color: $dark;
   .related-thumb {
+    position: relative;
     max-height: 200px;
     overflow: hidden;
     border-radius: 20px;
+    img {
+      top: 0 !important;
+    }
   }
   .related-detail {
     padding: 20px;

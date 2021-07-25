@@ -3,7 +3,7 @@ import React from 'react';
 import Gap from '../atoms/gap';
 import { Navbar, Footer, CategoryList, RecentNews } from '../moleculs';
 
-const HomeLayout = ({ children, title, ...rest }) => {
+const HomeLayout = ({ posts, children, title, ...rest }) => {
   return (
     <div className="home-container">
       <Head>

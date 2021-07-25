@@ -4,13 +4,21 @@ import Link from 'next/link';
 import Gap from '../../atoms/gap';
 import { IMGPlaceholder } from '../../../assets';
 
-const DetailNews = () => {
+const DetailNews = ({
+  title,
+  slug,
+  image,
+  body,
+  category,
+  created_at,
+  author,
+}) => {
   return (
     <div>
       <div className="detail">
         <div className="detail-image">
           <Image
-            src="https://placeimg.com/1000/1000/people"
+            src={image}
             alt=""
             layout="responsive"
             placeholder="blur"
@@ -23,37 +31,27 @@ const DetailNews = () => {
         <div className="detail-detail">
           <div className="detail-news-header">
             <div className="detail-news-title-wrapper">
-              <p className="detail-news-category">Politics</p>
-              <Gap height={10} />
-              <p className="detail-news-title">
-                Obama loom over the democratic
+              <p
+                className="detail-news-category"
+                style={{ textTransform: 'capitalize' }}
+              >
+                {category}
               </p>
+              <Gap height={10} />
+              <p className="detail-news-title">{title}</p>
             </div>
             <button>
               <i className="bi bi-bookmark"></i>
             </button>
           </div>
           <Gap height={10} />
-          <p>Esto Triramdani N - Posted at 20201/05/06</p>
+          <p>
+            {author} - Posted at {created_at}
+          </p>
         </div>
       </div>
       <Gap height={15} />
-      <p className="detail-news-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis,
-        nisi nec vestibulum semper, felis augue molestie dui, imperdiet faucibus
-        velit ipsum nec massa. Quisque malesuada nisl nec nibh gravida, nec
-        consequat eros viverra. Aliquam odio nulla, facilisis vehicula pretium
-        id, gravida non felis. Phasellus tincidunt id ligula id semper. Etiam
-        condimentum lacus et turpis viverra sollicitudin. Vestibulum aliquam ex
-        at erat sagittis sollicitu. <br />
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis,
-        nisi nec vestibulum semper, felis augue molestie dui, imperdiet faucibus
-        velit ipsum nec massa. Quisque malesuada nisl nec nibh gravida, nec
-        consequat eros viverra. Aliquam odio nulla, facilisis vehicula pretium
-        id, gravida non felis. Phasellus tincidunt id ligula id semper. Etiam
-        condimentum lacus et turpis viverra sollicitudin. Vestibulum aliquam ex
-        at erat sagittis sollicitu.
-      </p>
+      <p className="detail-news-description">{body}</p>
     </div>
   );
 };

@@ -15,11 +15,11 @@ const NavbarWriter = () => {
     }, 1000);
   };
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container">
-        <a className="navbar-brand" href="#">
-          Writer Area
-        </a>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div className="container-fluid">
+        <Link href="/writer/home">
+          <a className="navbar-brand">Home</a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -35,13 +35,13 @@ const NavbarWriter = () => {
           <ul className="navbar-nav">
             <li className="nav-item active">
               <Link href="/">
-                <a className="nav-link">Home</a>
+                <a className="nav-link">ETN Home</a>
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Features
-              </a>
+              <Link href="/writer/home/my-posts">
+                <a className="nav-link">Post</a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#" onClick={handleLogout}>

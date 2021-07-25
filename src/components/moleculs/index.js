@@ -6,6 +6,7 @@ import Headline from './headline';
 import RelatedNewsCard from './relatedNewsCard';
 import DetailNews from './detail';
 import NavbarWriter from './navbarWriter';
+import Card from './card';
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   RelatedNewsCard,
   DetailNews,
   NavbarWriter,
+  Card,
 };
