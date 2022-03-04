@@ -11,6 +11,7 @@ const RecentNewsCard = ({ title, image, category, slug }) => {
             src={image}
             alt=""
             layout="responsive"
+            objectFit="cover"
             height={70}
             width={70}
           />

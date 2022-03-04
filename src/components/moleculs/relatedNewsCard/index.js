@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { IMGPlaceholder } from '../../../assets';
 import Link from 'next/link';
-import { useRouter } from 'next/dist/client/router';
+
 const RelatedNewsCard = ({ image, slug, body, title, category }) => {
   return (
     <div className="related-news-card">

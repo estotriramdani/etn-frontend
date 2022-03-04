@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import Gap from '../../../src/components/atoms/gap';
 import HomeLayout from '../../../src/components/layouts/HomeLayout';
 import { DetailNews } from '../../../src/components/moleculs';
@@ -13,7 +14,7 @@ export default function News({ dataPost }) {
     let savedPost = JSON.parse(window.localStorage.getItem('EtnSavedPost'));
     savedPost.push(newDataPost);
     window.localStorage.setItem('EtnSavedPost', JSON.stringify(savedPost));
-    alert('Post berhasil disimpan!');
+    toast.success('Post berhasil disimpan!');
   };
 
   return (

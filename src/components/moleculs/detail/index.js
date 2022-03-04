@@ -21,6 +21,7 @@ const DetailNews = ({
           <Image
             src={image}
             alt=""
+            objectFit="cover"
             layout="responsive"
             placeholder="blur"
             width={`100%`}

@@ -2,6 +2,7 @@
 import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import Gap from '../../../src/components/atoms/gap';
 import Spinner from '../../../src/components/atoms/spinner';
 import AuthLayout from '../../../src/components/layouts/AuthLayout';
@@ -62,7 +63,7 @@ function MyPost() {
       )
         .then((response) => response.json())
         .then((result) => {
-          alert('Post berhasil dihapus!');
+          toast.success('Post berhasil dihapus!');
           setIsLoading(true);
         })
         .catch((error) => console.log('error', error));

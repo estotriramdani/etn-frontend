@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import Gap from '../src/components/atoms/gap';
 import HomeLayout from '../src/components/layouts/HomeLayout';
 import { Headline } from '../src/components/moleculs';
@@ -12,7 +13,7 @@ export default function Home({ posts }) {
     let savedPost = JSON.parse(window.localStorage.getItem('EtnSavedPost'));
     savedPost.push(post);
     window.localStorage.setItem('EtnSavedPost', JSON.stringify(savedPost));
-    alert('Post berhasil disimpan!');
+    toast.success('Post berhasil disimpan!');
   };
   return (
     <>

@@ -1,20 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IMGPlaceholder, IMGPolitics } from '../../../assets';
+import { IMGPlaceholder } from '../../../assets';
 import Gap from '../../atoms/gap';
 
 const Headline = ({ title, slug, category, body, image, handleSavedPost }) => {
   return (
     <div className="headline">
-      <div className="headline-image">
+      <div className="headline-image" style={{ position: 'relative' }}>
         <Image
           src={image}
           alt=""
-          layout="responsive"
+          objectFit="cover"
           placeholder="blur"
+          layout="responsive"
           width={`100%`}
-          height={`100%`}
+          height={100}
           blurDataURL={IMGPlaceholder}
           style={{ zIndex: '0' }}
         />
